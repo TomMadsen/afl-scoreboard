@@ -1,7 +1,20 @@
+// Color Variables
+
+$colPri: rgb(19, 56, 167);
+$colDk: darken($colPri, 15%);
+$colLt1: lighten($colPri, 15%);
+$colLt2: saturate($colPri, 25%);
+$colLt3: lighten($colPri, 35%);
+
+
+
+
 /* ELEMENT STYLES -------------------- */
+
 body {
-  background: #e8e7e7;
+  background: #e8e7e7; 
   font-family: arial;
+  // text-transform: uppercase;
   box-sizing: content-box;
 }
 
@@ -11,8 +24,8 @@ header {
   text-align: center;
   display: flex;
   align-items: center;
-  background-color: #1338a7;
-  border-bottom: solid 2px #cad7ff;
+  background-color: $colPri;
+  border-bottom: solid 2px rgb(202, 215, 255);
 }
 
 header h1 {
@@ -23,9 +36,10 @@ header h1 {
 }
 
 /* FORMS */
+
 form {
   display: flex;
-  background-color: #1338a7;
+  background-color: $colPri;
 }
 
 input[type=text] {
@@ -34,30 +48,30 @@ input[type=text] {
   margin: 15px 10px 15px 15px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #0b2162;
+  background-color: $colDk;
   border-style: none;
   text-shadow: none;
   text-transform: uppercase;
-  color: #7c99f0;
+  color: $colLt3;
   letter-spacing: 2px;
   outline: none;
 }
 
-input[type=text]::-webkit-input-placeholder {
-  color: #7c99f0;
+input[type=text]::-webkit-input-placeholder{
+  color: $colLt3;
   letter-spacing: 2px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus{
   background-color: rgba(0, 0, 0, 0.2);
 }
 
 input[type=submit] {
   display: block;
-  font-size: 0.6em;
-  margin: 15px 15px 15px 0;
+  font-size: .6em;
+  margin: 15px 15px 15px 0; 
   padding: 10px;
-  background-color: #0b2162;
+  background-color: $colDk;
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -68,13 +82,15 @@ input[type=submit] {
   cursor: pointer;
 }
 
-button,
+button, 
 input[type=submit] {
   outline: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease,
+              color 0.2s ease;
 }
 
 /* ICONS */
+
 svg {
   width: 28px;
   height: 19px;
@@ -89,23 +105,23 @@ svg {
 }
 
 @keyframes grow {
-  50% {
-    transform: scale(1.4) rotate(-3deg);
-  }
+  50% { transform: scale(1.4) rotate(-3deg); }
 }
+
 /* COMPONENT STYLES -------------------- */
+
 .scoreboard {
   background: #fff;
   width: 93%;
   max-width: 950px;
   margin: 70px auto;
-  box-shadow: 0 2px 0 #002fba;
+  box-shadow: 0 2px 0 $colLt2;
   border-radius: 6px;
   overflow: hidden;
-  font-size: 1.8vw;
+ font-size: 1.8vw;
 }
 
-.team-board {
+.team-board{
   overflow: hidden;
   display: flex;
 }
@@ -113,34 +129,38 @@ svg {
 .team {
   background: #EEEEEE;
   width: 50%;
+  // display: flex;
+  // flex-wrap: wrap;
   font-size: 1.2em;
   border-bottom: solid 2px #EEEEEE;
   letter-spacing: 2px;
-}
-.team h1 {
-  width: 70%;
-  margin-left: 10px;
-  display: inline-block;
-}
-.team:last-child {
-  border-left: 1px solid #7c99f0;
+  
+  h1{
+    width: 70%;
+    margin-left: 10px;
+    display: inline-block;
+  }
+  &:last-child{
+    border-left: 1px solid $colLt3;
+  }
 }
 
+
 .player {
-  background: #f8f8f8;
+  background: rgb(248, 248, 248);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   font-size: 2.2vw;
-  border-bottom: solid 4px #7c99f0;
+  border-bottom: solid 4px $colLt3;
   letter-spacing: 2px;
   padding-top: 7px;
   padding-bottom: 7px;
 }
 
 .player:last-of-type {
-  border-bottom-color: #2152e6;
+  border-bottom-color: $colLt1;
 }
 
 .player-name:hover .remove-player {
@@ -151,21 +171,18 @@ svg {
 .counter-score {
   color: #2F2366;
 }
-
-.player-stats {
+.player-stats{
   padding-top: 5px;
   min-width: 150px;
   margin-right: auto;
   width: 60%;
 }
-
 .player-name {
   display: block;
   padding-left: 3px;
   margin-bottom: 3px;
   margin-right: auto;
 }
-
 .player-score {
   font-size: 2vw;
   display: block;
@@ -185,7 +202,7 @@ svg {
   background: none;
 }
 
-.counter-box {
+.counter-box{
   display: flex;
   justify-content: space-evenly;
   min-width: 40%;
@@ -197,12 +214,25 @@ svg {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // min-width: 100px;
+  // width: 30%;
+  span:first-child{
+    display: block;
+    // margin-bottom: 2px;
+    // text-align: center;
+    margin: auto 0;
+    width: 100%;
+    font-size: .5rem;
+  }
 }
-.counter span:first-child {
-  display: block;
-  margin: auto 0;
-  width: 100%;
-  font-size: 0.5rem;
+
+
+
+.counter-tools{
+  // width: 100%;
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
 }
 
 .counter-action {
@@ -220,14 +250,12 @@ svg {
   outline: none;
 }
 
-.decrement {
-  border-radius: 0 0 50% 50%;
+.decrement{
+  border-radius:0 0 50% 50%;
 }
-
-.increment {
-  border-radius: 50% 50% 0 0;
+.increment{
+  border-radius: 50% 50% 0 0 ;
 }
-
 .counter-action:hover {
   color: #fff;
 }
@@ -242,25 +270,30 @@ svg {
 
 .counter-score {
   display: block;
+  // width: 50%;
   width: 4vw;
   text-align: center;
   margin: auto 0;
 }
 
+
+
+
 .stats,
 .stopwatch {
-  width: 70px;
+width: 70px;
 }
 
 .stats {
-  font-weight: normal;
-  display: inline;
+// margin: 0 0 0 28px;
+font-weight: normal;
+display: inline;
 }
 
 .stopwatch {
   padding: 15px 10px 5px 10px;
   margin: -5px -10px -5px 10px;
-  background: #002fba;
+  background: $colLt2;
 }
 
 .stopwatch-time {
@@ -271,7 +304,7 @@ svg {
 
 .stopwatch button {
   margin: 8px 5px;
-  background-color: #0b2162;
+  background-color: $colDk;
   border-radius: 5px;
   padding: 7px 8px;
   border: none;
@@ -285,15 +318,14 @@ svg {
 .stopwatch button:hover,
 input[type=submit]:hover {
   background: #fff;
-  color: #0b2162;
+  color: $colDk;
   cursor: pointer;
 }
 
 .stopwatch h2 {
-  font-size: 0.6em;
+  font-size: .6em;
   margin: 0;
   font-weight: normal;
   letter-spacing: 2px;
 }
 
-/*# sourceMappingURL=app.css.map */
