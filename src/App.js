@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import Team from './components/Team';
 import './app.css';
-import update from 'immutability-helper';
 
 class App extends Component {
   state = {
@@ -76,7 +75,7 @@ class App extends Component {
     const newData = this.state[team].map((el,index) => {
         if(i=== index) {
             el[score] += delta;
-            el = { ...el , score }
+            // el = { ...el , score }
         }
         return el
     })

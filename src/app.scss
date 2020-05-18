@@ -129,15 +129,19 @@ svg {
 
 .team {
   background: #EEEEEE;
-  width: 50%;
+  width: 100%;
+  @media (min-width: 538px){
+    width: 50%;
   min-width: 250px;
+  }
   // display: flex;
   // flex-wrap: wrap;
-  font-size: 1.2em;
+  font-size: 1rem;
   border-bottom: solid 2px #EEEEEE;
   letter-spacing: 2px;
   
   h1{
+    font-size: 1.2rem;
     width: 70%;
     margin-left: 10px;
     display: inline-block;
@@ -154,11 +158,11 @@ svg {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  font-size: 2.2vw;
+  font-size: 1rem;
   border-bottom: solid 1px $colLt3;
   letter-spacing: 2px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .player_away_team {
   box-shadow:inset 2px 0 0 0 $colLt3;
@@ -189,7 +193,7 @@ svg {
   margin-right: auto;
 }
 .player-score {
-  font-size: 2vw;
+  font-size: .7em;
   display: block;
   padding-left: 15px;
   margin: 0 auto 5px 0;
@@ -210,66 +214,80 @@ svg {
 .counter-box{
   display: flex;
   justify-content: space-evenly;
-  min-width: 40%;
+  min-width: 30%;
   margin-left: auto;
+  @media (min-width: 538px){
+    width: 20%;
+  }
 }
-
+*{
+  box-sizing: content-box;
+}
 .counter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // min-width: 100px;
-  // width: 30%;
-  span:first-child{
+  span{
     display: block;
-    // margin-bottom: 2px;
-    // text-align: center;
+    text-align: center;
     margin: auto 0;
     width: 100%;
     font-size: .5rem;
+    
   }
 }
 
 
-
-.counter-tools{
-  // width: 100%;
-  // display: flex;
-  // align-content: center;
-  // justify-content: center;
-}
-
 .counter-action {
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #B0AEBA;
-  background: #DCDCDC;
-  display: block;
-  width: 40px;
-  height: 25px;
+  height: 40px;
   cursor: pointer;
   outline: none;
+  background: none;
+  display: block;
+  border: none;
+  padding-block-start: 0px;
+padding-inline-end: 0px;
+padding-block-end: 0px;
+padding-inline-start: 0px;
 }
 
-.decrement{
-  border-radius:0 0 50% 50%;
-}
-.increment{
-  border-radius: 50% 50% 0 0 ;
+.arrow {
+  height: 35px;
+  width: 35px;
+  .cls-1 {
+    fill: #9a9a9a;
+    stroke: #a7a7a7;
+    stroke-miterlimit: 10;
+  }
+  .cls-2 {
+    fill: #bcbec0;
+  }
 }
 .counter-action:hover {
-  color: #fff;
+  .cls-2{
+    fill: #fff;
+  }
 }
 
-.increment:hover {
-  background: #83D97C;
+.increment:hover .arrow-up{
+  .cls-1{
+    stroke: #00a14b;
+    fill: #008e42;
+  }
+  
 }
 
-.decrement:hover {
-  background: #EF5350;
+.decrement:hover .arrow-down{
+  .cls-1{
+    stroke: #dc0000;
+    fill: #d30000;
+  }
 }
+
+  .arrow-down{
+    margin: 3px 0;
+  }
 
 .counter-score {
   display: block;
@@ -278,7 +296,6 @@ svg {
   text-align: center;
   margin: auto 0;
 }
-
 
 
 
