@@ -4,15 +4,15 @@ import Stats from './Stats'
 
 const Team = (props) => {
 
-  const {homeTeam, awayTeam, addScore, removePlayer} = props
+  const {home_team, away_team, addScore, removePlayer} = props
     return (
     <div className="team-board">
       <div className="team home-team">
         <h1 className="team-name">Home Team</h1>
         <Stats 
-          team={homeTeam}
+          team={home_team}
         />
-        {homeTeam.map((player, i)=>
+        {home_team.map((player, i)=>
         <Player 
           name={player.name}
           goals={player.goals}
@@ -29,9 +29,9 @@ const Team = (props) => {
       <div className="team away-team">
         <h1 className="team-name">Away Team</h1>
         <Stats 
-          team={awayTeam}
+          team={away_team}
         />
-        {awayTeam.map((player, i)=>
+        {away_team.map((player, i)=>
         <Player 
           name={player.name}
           goals={player.goals}

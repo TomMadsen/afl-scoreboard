@@ -124,11 +124,13 @@ svg {
 .team-board{
   overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .team {
   background: #EEEEEE;
   width: 50%;
+  min-width: 250px;
   // display: flex;
   // flex-wrap: wrap;
   font-size: 1.2em;
@@ -141,22 +143,25 @@ svg {
     display: inline-block;
   }
   &:last-child{
-    border-left: 1px solid $colLt3;
+    box-shadow:inset 2px 0 0 0 $colLt3;
   }
 }
 
-
-.player {
+.player_home_team,
+.player_away_team {
   background: rgb(248, 248, 248);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   font-size: 2.2vw;
-  border-bottom: solid 4px $colLt3;
+  border-bottom: solid 1px $colLt3;
   letter-spacing: 2px;
   padding-top: 7px;
   padding-bottom: 7px;
+}
+.player_away_team {
+  box-shadow:inset 2px 0 0 0 $colLt3;
 }
 
 .player:last-of-type {
@@ -173,7 +178,7 @@ svg {
 }
 .player-stats{
   padding-top: 5px;
-  min-width: 150px;
+  // min-width: 150px;
   margin-right: auto;
   width: 60%;
 }
@@ -237,15 +242,13 @@ svg {
 
 .counter-action {
   border: none;
-  font-size: 1.8vw;
+  font-size: 18px;
   font-weight: bold;
   color: #B0AEBA;
   background: #DCDCDC;
   display: block;
-  width: 7vw;
-  max-width: 45px;
-  height: 4vw;
-  max-height: 25px;
+  width: 40px;
+  height: 25px;
   cursor: pointer;
   outline: none;
 }
