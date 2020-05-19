@@ -37,10 +37,13 @@ input[type=text] {
   background-color: #0b2162;
   border-style: none;
   text-shadow: none;
-  text-transform: uppercase;
   color: #7c99f0;
-  letter-spacing: 2px;
   outline: none;
+}
+@media (min-width: 447px) {
+  input[type=text] {
+    letter-spacing: 2px;
+  }
 }
 
 input[type=text]::-webkit-input-placeholder {
@@ -52,9 +55,30 @@ input[type=text]:focus {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.team-select {
+  font-size: 1rem;
+  padding: 15px 6px;
+  color: #7c99f0;
+}
+.team-select h3 {
+  margin: 0 6px 2px;
+  color: #e4e4e4;
+}
+.team-select label {
+  font-size: 0.8em;
+  display: block;
+}
+
+input[type=radio] {
+  display: inline-block;
+}
+input[type=radio]:first-child {
+  margin-top: 1px;
+}
+
 input[type=submit] {
   display: block;
-  font-size: 0.6em;
+  font-size: 0.6rem;
   margin: 15px 15px 15px 0;
   padding: 10px;
   background-color: #0b2162;

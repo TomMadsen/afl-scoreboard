@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
 import Team from './components/Team';
+import AddPlayerForm from './components/AddPlayerForm'
 import './app.css';
 
 class App extends Component {
@@ -102,9 +103,25 @@ class App extends Component {
 
 
 
-  addHomePlayer = () => {
-
+  addPlayer = (team, name) => {
+    const newTeam = [
+      ...this.state[team],
+      {
+        id: this.newId,
+        name,
+        goals: 0,
+        behinds: 0,
+      }
+    ]
+    this.setState((prevState) => {
+      return {
+          ...prevState,
+          [team]: newTeam        
+      };
+    })
   }
+
+
   render(){
     return (
       
@@ -115,6 +132,9 @@ class App extends Component {
         home_team={this.state.home_team}
         removePlayer={this.removePlayer}
         addScore={this.addScore}
+      />
+      <AddPlayerForm 
+        addPlayer={this.addPlayer}
       />
     </div>
   );

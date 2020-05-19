@@ -51,9 +51,11 @@ input[type=text] {
   background-color: $colDk;
   border-style: none;
   text-shadow: none;
-  text-transform: uppercase;
   color: $colLt3;
-  letter-spacing: 2px;
+  @media (min-width: 447px){
+    letter-spacing: 2px;
+  }
+  
   outline: none;
 }
 
@@ -65,10 +67,30 @@ input[type=text]::-webkit-input-placeholder{
 input[type=text]:focus{
   background-color: rgba(0, 0, 0, 0.2);
 }
+.team-select{
+  font-size: 1rem;
+  padding: 15px 6px;
+  color: $colLt3;
+  h3{
+    margin: 0 6px 2px;
+    color: rgb(228, 228, 228);
+  }
+  label{
+    font-size: .8em;
+    display: block;
+  }
+}
+
+input[type=radio]{
+  &:first-child{
+    margin-top:1px;
+  }
+  display: inline-block;
+}
 
 input[type=submit] {
   display: block;
-  font-size: .6em;
+  font-size: .6rem;
   margin: 15px 15px 15px 0; 
   padding: 10px;
   background-color: $colDk;
