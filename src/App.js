@@ -60,9 +60,6 @@ class App extends Component {
       ]
   }
 
-  HighHomeId = Math.max.apply(Math, this.state.home_team.map(player=>player.id))
-  HighAwayId = Math.max.apply(Math, this.state.away_team.map(player=>player.id))
-  newId = () => this.HighHomeId>this.HighAwayId? this.HighHomeId + 1 : this.HighAwayId + 1;
 
   // addScore = (i, delta, team, score) => {
   //   const val = eval(`this.state.${team}[${i}].${score} += ${delta}`)
@@ -104,10 +101,12 @@ class App extends Component {
 
 
   addPlayer = (team, name) => {
+    
+    let HighId = Math.max.apply(Math, this.state[team].map(player=>player.id))
     const newTeam = [
       ...this.state[team],
       {
-        id: this.newId,
+        id: HighId + 1,
         name,
         goals: 0,
         behinds: 0,
