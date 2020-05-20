@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Timer from './Timer'
 const Header = (props) => {
   
 
@@ -7,6 +7,7 @@ const Header = (props) => {
   return (
   <header>
     <h1>{props.title}</h1>
+    <Timer />
   </header>
   )
   

@@ -19,13 +19,12 @@ class AddPlayerForm extends Component {
       <form 
       onSubmit={this.handleSubmit}
       ref={form => this.form = form}>
-      >
         <input 
         type="text" 
         placeholder="Add a new player"
         ref={this.playerName}
         />
-        <div class="team-select">
+        <div className="team-select">
           <h3>Team:</h3>
           <label>
             <input 

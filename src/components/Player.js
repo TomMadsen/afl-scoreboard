@@ -3,7 +3,8 @@ import Counter from './Counter';
 
 class Player extends PureComponent {
     render(){
-      const {removePlayer, name, goals, behinds, addScore, index, team, id} = this.props
+      
+      const {removePlayer, name, goals, behinds, addScore, index, team, id} = this.props;
       const shortenedName = name.substring(0, 30);
       return (
     <div className={"player_" + team}>

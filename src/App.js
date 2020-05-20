@@ -6,6 +6,14 @@ import './app.css';
 
 class App extends Component {
   state = {
+      home_score:{
+        goals:0,
+        behinds:0,
+      },
+      away_score:{
+        goals:0,
+        behinds:0,
+      },
       home_team: [
         {
           id: 1,
@@ -60,43 +68,36 @@ class App extends Component {
       ]
   }
 
-
-  // addScore = (i, delta, team, score) => {
-  //   const val = eval(`this.state.${team}[${i}].${score} += ${delta}`)
-  //   console.log(val)
-  //   this.setState( {
-  //       [score]: val
-  //   })
-  // }
-
-  addScore = (i, delta, team, score) => {
-    const newData = this.state[team].map((el,index) => {
-        if(i=== index) {
-            el[score] += delta;
-            // el = { ...el , score }
-        }
-        return el
+  addScore = (index, delta, team, score) => {
+    const teamScore = team==="home_team"?"home_score":"away_score";
+    let upDatedScore = {...this.state[teamScore][score]};
+    upDatedScore[score] += delta;
+    const upDated = this.state[team].map((el,i) => {
+      if(index=== i) {
+          el[score] += delta;
+          // el = { ...el , score }
+      }
+      return el
     })
-
     this.setState((prevState) => {
       return {
         ...prevState ,
-        [team] : newData
+        [team] : upDated,
+        [teamScore]:upDatedScore
       }
     })
-}
+  }
   
 
   removePlayer = (id, team) => {
     const newTeam = this.state[team].filter(player => player.id !== id)
-
-  this.setState((prevState) => {
-        return {
-          ...prevState,
-          [team]: newTeam
-        };
-  })
-}
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        [team]: newTeam
+      };
+    })
+  }
 
 
 

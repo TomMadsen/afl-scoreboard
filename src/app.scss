@@ -30,7 +30,7 @@ header {
 
 header h1 {
   flex-grow: 1;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: normal;
 }
@@ -319,11 +319,15 @@ padding-inline-start: 0px;
   margin: auto 0;
 }
 
-
-
-.stats,
-.stopwatch {
-width: 70px;
+.timer {
+  width: 140px;
+  padding: 5px;
+  h2 {
+    font-size: 1rem;
+    margin: 0 0 5px;
+    font-weight: normal;
+    // letter-spacing: 2px;
+  }
 }
 
 .stats {
@@ -331,43 +335,36 @@ width: 70px;
 font-weight: normal;
 display: inline;
 }
-
-.stopwatch {
-  padding: 15px 10px 5px 10px;
-  margin: -5px -10px -5px 10px;
-  background: $colLt2;
-}
-
-.stopwatch-time {
+.timer-time {
   display: block;
   font-family: monospace;
-  font-size: 2.15em;
+  font-size: 2.15rem;
+  background: $colDk;
+  color: $colLt3;
+  border: $colLt1 solid 2px;
 }
 
-.stopwatch button {
-  margin: 8px 5px;
+.timer button {
+  margin: 5px 5px;
   background-color: $colDk;
   border-radius: 5px;
-  padding: 7px 8px;
+  padding: 7px 15px 10px;
   border: none;
   color: #fff;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-shadow: none;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 1rem;
+  // letter-spacing: 2px;
+  // font-weight: bold;
+  // text-shadow: none;
+  // text-transform: uppercase;
 }
 
-.stopwatch button:hover,
+.timer button:hover,
 input[type=submit]:hover {
   background: #fff;
   color: $colDk;
   cursor: pointer;
 }
 
-.stopwatch h2 {
-  font-size: .6em;
-  margin: 0;
-  font-weight: normal;
-  letter-spacing: 2px;
-}
+
 
